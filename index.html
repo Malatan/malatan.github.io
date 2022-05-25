@@ -1,0 +1,780 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+   <head>
+      <meta charset="utf-8">
+      <title>Zheng - la Repubblica</title>
+      <meta name="keywords" content="Repubblica, journal, today, news">
+      <meta name="description" content="Repubblica, cronaca, economia, sport, esteri, spettacoli, musica, cultura, scienza, tecnologia.">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <link rel="stylesheet" href="css/style.css" type="text/css">
+   </head>
+   <body>
+      <svg style="position: absolute; width: 0; height: 0; overflow: hidden" version="1.1" xmlns="http://www.w3.org/2000/svg">
+         <symbol id="r-icon-menu">
+            <path d="M0 0h16v2H0zM0 5h12v2H0zM0 10h16v2H0z" />
+         </symbol>
+         <symbol id="r-icon-search">
+            <path d="M5.792 9.792c2.208 0 4-1.792 4-4s-1.792-4-4-4-4 1.792-4 4 1.792 4 4 4zm5.333 0l4.417 4.417-1.333 1.333-4.417-4.417v-.708l-.25-.25c-1
+               .875-2.333 1.375-3.75 1.375C2.584 11.542 0 9.001 0 5.792A5.78 5.78 0 0 1 5.792 0c3.209 0 5.75 2.583 5.75 5.792 0 1.417-.5 2.75-1.375 3.75l.25.25h.708z" />
+         </symbol>
+         <symbol id="r-premium" viewBox="0 0 20 20">
+            <path fill-rule="evenodd"
+               d="M8.833 4h.234c1.7 0 2.133.86 2.133 2.927C11.2 8.995 10.767 9.6 9 9.6h-.2V4h.033zm2.294 6.09c2.236-.438 3.259-1.597 3.259-3.257 0-2.255-1.566-3.633-4.761-3.633H4.8v.658c.99.062 1.086.376 1.086 1.315v9.991c0 .908-.223 1.222-1.086 1.316v.657h5.208v-.657c-.862-.063-1.086-.408-1.086-1.316v-4.76h.287c.671 0 1.215.25 1.406.845.288.971.288 3.038.671 4.385.384 1.253 1.31 1.566 2.493 1.566.926 0 1.565-.282 1.821-.438l-.032-.658c-.799.188-1.118-.125-1.47-2.35-.351-2.41-1.182-3.288-2.971-3.664zM2 0h16a2 2 0 012 2v16a2 2 0 01-2 2H2a2 2 0 01-2-2V2a2 2 0 012-2zm-.2.8h16.4a1 1 0 011 1v16.4a1 1 0 01-1 1H1.8a1 1 0 01-1-1V1.8a1 1 0 011-1z" />
+         </symbol>
+         <symbol id="social-icon-user" viewBox="0 0 45 45">
+            <path
+               d="M22.5 3.75c-10.313 0-18.75 8.437-18.75 18.75s8.438 18.75 18.75 18.75c10.313 0 18.75-8.438 18.75-18.75s-8.438-18.75-18.75-18.75zM6 22.5c0-9 7.313-16.5 16.5-16.5s16.5 7.313 16.5 16.5c0 3.938-1.313 7.5-3.563 10.313-2.813-1.5-5.813-2.25-9.188-2.25-5.062 0-9.75 2.062-13.312 5.25-4.125-3-6.938-7.875-6.938-13.312z">
+            </path>
+            <path
+               d="M31.875 22.5c0 3.107-2.518 5.625-5.625 5.625s-5.625-2.518-5.625-5.625c0-3.107 2.518-5.625 5.625-5.625s5.625 2.518 5.625 5.625z">
+            </path>
+         </symbol>
+         <symbol id="r-icon-close">
+            <path d="M13.645 1.707L2.332 13.02.917 11.606 12.231.292z" />
+            <path d="M13.645 11.606L2.332.292.917 1.707 12.231 13.02z" />
+         </symbol>
+         <symbol id="R-logo">
+           <path fill="#000" fill-rule="nonzero"
+            d="M14.772 3.192h.903c5.827 0 7.221 3.03 7.221 10.48 0 7.53-1.477 9.659-7.55 9.659h-.574V3.192zm7.632 21.858c8.043-1.637 11.654-5.812 11.654-11.788C34.058 5.075 28.478 0 17.152 0H0v2.374c3.447.245 3.857 1.391 3.857 4.748v36.511c0 3.274-.82 4.42-3.857 4.748v2.374h18.547v-2.374c-3.036-.245-3.857-1.473-3.857-4.748V26.196h1.067c2.38 0 4.35.9 4.924 3.11.985 3.439 1.067 11.134 2.38 15.964 1.313 4.583 4.596 5.73 8.863 5.73 3.283 0 5.58-.982 6.483-1.637l-.163-2.374c-2.873.737-3.94-.49-5.17-8.595-1.15-8.678-4.187-11.953-10.67-13.344z" />
+         </symbol>
+      </svg>
+      <div id="sticky-navbar" class="sticky-navbar">
+         <div class="sticky-navbar-content">
+            <div class="sticky-navbar-left">
+               <button id="repHamOpenButton" class="sticky-navbar-item sticky-navbar-menu" onclick="openLeftBar()">
+                  <svg><use href="#r-icon-menu"></use></svg>
+                  <span class="hide-on-mobile">Menu</span>
+               </button>
+               <button id="repSearchToggleButton" class="sticky-navbar-item sticky-navbar-searchbtn hide-on-mobile" onclick="openSearch()">
+                  <svg><use href="#r-icon-search"></use></svg>Cerca
+               </button>
+            </div>
+            <div class="sticky-navbar-center">
+               <a href="#"><strong>ABBONATI</strong></a>
+            </div>
+            <div class="sticky-navbar-right">
+               <a href="#" class="sticky-navbar-item hide-on-mobile">Gedi Smile</a>
+               <a href="#" class="sticky-navbar-item hide-on-mobile sticky-navbar-item-premium">
+                  <svg class="premium-logo"><use href="#r-premium"></use></svg>
+               </a>
+               <div id="rep-user" class="sticky-navbar-item sticky-navbar-user">
+                  <span id="user-container">
+                     <span class="header-login">Accedi</span>
+                     <svg class="social-icon-user"><use xlink:href="#social-icon-user"></use></svg>
+                  </span>
+               </div>
+            </div>
+         </div>
+         <div id="sticky-searchForm">
+            <div class="sticky-navbar-search-div">
+               <form action="#" class="sticky-navbar-search">
+                  <input type="search" required="" name="query" placeholder="Cerca articoli o argomenti" value="">
+                  <button type="submit">
+                     <svg>
+                        <use href="#r-icon-search"></use>
+                     </svg>
+                  </button>
+               </form>
+               <button id="repSearchFormCloseButton" class="sticky-navbar-search-closebtn" onclick="openSearch()">
+                  <svg><use href="#r-icon-close"></use></svg>
+               </button>
+            </div>
+         </div>
+      </div>
+      <div id="repNetworkNav" class="left-navbar">
+         <div class="left-navbar-header">
+            <svg class="R-logo"><use href="#R-logo"></use></svg>
+            <form class="left-navbar-search" action="#" method="get">
+               <input type="search" required="" placeholder="Ricerca su Repubblica">
+               <button type="submit">
+                  <svg><use href="#r-icon-search"></use></svg>
+               </button>
+            </form>
+            <button class="left-navbar-closebtn" onclick="openLeftBar()">
+               <svg><use href="#r-icon-close"></use></svg>
+            </button>
+         </div>
+         <nav id="rep-nav-list" class="left-navbar-content" role="navigation">
+            <ul class="rep-left-nav__list">
+               <li class="left-navbar-list-item">
+                  <a href="#">
+                     <svg class="premium-logo"><use href="#r-premium"></use></svg>
+                     <span><strong>Contenuti per gli abbonati</strong></span>
+                  </a>
+               </li>
+               <li class="left-navbar-list-item">
+                  <a href="#"><strong>Gedi Smile</strong></a>
+               </li>
+               <li class="left-navbar-list-item">
+                  <a class="left-navbar-list-title"><strong>Sezioni</strong><span></span></a>
+                  <ul class="rep-left-nav__sublist">
+                     <li><a href="#">Commenti</a></li>
+                     <li><a href="#">Cronaca</a></li>
+                     <li><a href="#">Cultura</a></li>
+                     <li><a href="#">Design</a></li>
+                     <li><a href="#">Economia</a></li>
+                     <li><a href="#">Esteri</a></li>
+                     <li><a href="#">Giochi</a></li>
+                     <li><a href="#">Green&amp;Blue</a></li>
+                     <li><a href="#">Il Gusto</a></li>
+                     <li><a href="#">Londra</a></li>
+                     <li><a href="#">Moda e Beauty</a></li>
+                     <li><a href="#">Mondo Solidale</a></li>
+                     <li><a href="#">Motori</a></li>
+                     <li><a href="#">Podcast</a></li>
+                     <li><a href="#">Politica</a></li>
+                     <li><a href="#">RepTv</a></li>
+                     <li><a href="#">Rubriche</a></li>
+                     <li><a href="#">Salute</a></li>
+                     <li><a href="#">Scienze</a></li>
+                     <li><a href="#">Scuola</a></li>
+                     <li><a href="#">Repubblica@Scuola</a></li>
+                     <li><a href="#">Robinson</a></li>
+                     <li><a href="#">Serie Tv</a></li>
+                     <li><a href="#">Spettacoli</a></li>
+                     <li><a href="#">Sport</a></li>
+                     <li><a href="#">Tecnologia</a></li>
+                     <li><a href="#">Vaticano</a></li>
+                     <li><a href="#">Viaggi</a></li>
+                  </ul>
+               </li>
+               <li class="left-navbar-list-item">
+                  <ul class="rep-left-nav__sublist">
+                     <li><a href="#">Roma</a></li>
+                     <li><a href="#">Milano</a></li>
+                     <li><a href="#">Bari</a></li>
+                     <li><a href="#">Bologna</a></li>
+                     <li><a href="#">Firenze</a></li>
+                     <li><a href="#">Genova</a></li>
+                     <li><a href="#">Napoli</a></li>
+                     <li><a href="#">Palermo</a></li>
+                     <li><a href="#">Parma</a></li>
+                     <li><a href="#">Torino</a></li>
+                  </ul>
+               </li>
+               <li class="left-navbar-list-item">
+                  <a class="left-navbar-list-title"><strong>Speciali</strong><span></span></a>
+                  <ul class="rep-left-nav__sublist">
+                     <li><a href="#">Oncologia</a></li>
+                     <li><a href="#">Salute Seno</a></li>
+                     <li><a href="#">Giochi senza barriere</a></li>
+                     <li><a href="#">Europa, Italia</a></li>
+                     <li><a href="#">Repubblica dei cavalli</a></li>
+                  </ul>
+               </li>
+               <li class="left-navbar-list-item">
+                  <a class="left-navbar-list-title"><strong>Inserti</strong><span></span></a>
+                  <ul class="rep-left-nav__sublist">
+                     <li><a href="#">Affari&amp;Finanza</a></li>
+                     <li><a href="#">D</a></li>
+                     <li><a href="#">Il Venerdi</a></li>
+                     <li><a href="#">L'Espresso</a></li>
+                     <li><a href="#">Robinson</a></li>
+                  </ul>
+               </li>
+               <li class="left-navbar-list-item">
+                  <a class="left-navbar-list-title"><strong>Servizi</strong><span></span></a>
+                  <ul class="rep-left-nav__sublist">
+                     <li><a href="#">Annunci</a></li>
+                     <li><a href="#">Aste</a></li>
+                     <li><a href="#">Giochi e Scommesse</a></li>
+                     <li><a href="#">Guida Tv</a></li>
+                     <li><a href="#">Ilmiolibro</a></li>
+                     <li><a href="#">Lavoro</a></li>
+                     <li><a href="#">Meteo</a></li>
+                     <li><a href="#">Necrologie</a></li>
+                     <li><a href="#">Oroscopo</a></li>
+                     <li><a href="#">Repubblica +</a></li>
+                     <li><a href="#">Joy.it</a></li>
+                     <li><a href="#">Consigli.it</a></li>
+                     <li><a href="#">Dizionari</a></li>
+                     <li><a href="#">Ricette</a></li>
+                     <li><a href="#">Newsletter</a></li>
+                  </ul>
+               </li>
+            </ul>
+         </nav>
+         <ul class="left-navbar-contact">
+            <li><a href="#"><strong>Redazione</strong></a></li>
+            <li><a href="#"><strong>Scriveteci</strong></a></li>
+         </ul>
+      </div>
+      <div class="left-navbar-bg" onclick="openLeftBar()"></div>
+      <header class="page-header">
+         <div class="header-middle">
+            <div class="header-middle-center">
+               <h1>
+                  <a href="#">
+                     <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 180 35.77">
+                        <path d="M6.76,26.15V0H5.51L0,2.62V3.4L1.39,4.77V26.15C1.39,27.38,1.31,27.9,0,28v1.31h8.1V28C6.84,27.9,6.76,27.38,6.76,26.15Z"></path>
+                        <path d="M22.34,25.55V16c0-4.1-2.43-6.16-7.11-6.16-3.66,0-6.13,1.86-6.13,4.42A2.64,2.64,0,0,0,11.76,17a2.14,2.14,0,0,0,2.35-2.22c0-1.57-1.4-2-1.4-2.48s.69-.82,1.58-.82c1.89,0,2.64.9,2.64,3.15v2.7L13.7,18.84C10.11,20.47,8.59,22,8.59,25a4.39,4.39,0,0,0,4.69,4.68,4.74,4.74,0,0,0,4-2.46,3.08,3.08,0,0,0,3.22,2.46,4.41,4.41,0,0,0,3.42-1.47V26.9a1.41,1.41,0,0,1-.76.24C22.62,27.14,22.34,26.66,22.34,25.55Zm-5.41-.8c0,1.2-.67,2.15-1.71,2.15s-1.59-.89-1.59-2.81c0-2.24.64-3.22,1.88-4.11l1.42-1Z"></path>
+                        <path d="M49.46,22.43c-.75-5-2.43-6.8-6.06-7.55,4.49-.9,6.51-3.26,6.51-6.64,0-4.59-3.14-7.41-9.48-7.41H30.85V2.14C32.8,2.3,33,2.93,33,4.8V25.32c0,1.83-.48,2.5-2.15,2.66v1.31H41.26V28c-1.71-.16-2.15-.83-2.15-2.66v-9.8h.6a2.58,2.58,0,0,1,2.78,1.75c.55,2,.57,6.26,1.35,9s2.58,3.23,5,3.23a6.89,6.89,0,0,0,3.65-.91l-.07-1.31C50.8,27.66,50.15,27,49.46,22.43Zm-10-8.58h-.36V2.55h.49c3.27,0,4.08,1.73,4.08,5.92S42.85,13.85,39.47,13.85Z"></path>
+                        <path d="M61.3,26.18c-2.44,0-4.12-2.56-4.32-8h8.66v-.6c0-4.92-2.69-7.74-6.33-7.74-4.28,0-7.62,3.89-7.62,10.25,0,6,3.18,9.64,7.5,9.64,3.22,0,5.29-1.66,6.59-4.93l-1.15-.85C63.7,25.42,62.83,26.18,61.3,26.18ZM59,11.49c1,0,1.7,1.23,1.7,4.42v.58H57C57.05,12.59,57.93,11.49,59,11.49Z"></path>
+                        <path d="M77.41,9.86A5.1,5.1,0,0,0,73,12.33V9.86H71.8L66.29,12.1v.78l1.39,1.36V32.63c0,1.23-.08,1.75-1.43,1.83v1.31h8.27V34.46c-1.4-.08-1.48-.6-1.48-1.83V29.29a7,7,0,0,0,2.48.44c4.54,0,7.38-4.12,7.38-10.91C82.9,12.77,80.64,9.86,77.41,9.86ZM75,28C73.62,28,73,27,73,25.1V15.45c0-1.55.84-2.66,2-2.66,1.57,0,2.12,2.43,2.12,8.27C77.18,25.73,76.89,28,75,28Z"></path>
+                        <path d="M98.87,24.88v-15H97.64l-5.33,1.26v1.11c1.08.44,1.2,1.33,1.2,2.87v9.14a2.22,2.22,0,0,1-2,2.46c-1.11,0-1.55-.75-1.55-2V9.86H88.7l-5.55,1.26v1.11c1.19.2,1.41,1.12,1.41,2.87v8.33c0,4.38,1.9,6.34,4.68,6.34a5,5,0,0,0,4.27-2.6v2.31h1.1l5.52-.82V27.34C99,27.1,98.87,26.76,98.87,24.88Z"></path>
+                        <path d="M111.1,9.86a5.16,5.16,0,0,0-4.34,2.47V0h-1.25L100,2.62V3.4l1.38,1.37V27a10.45,10.45,0,0,0,7.51,2.69c4.86,0,7.71-4.12,7.71-10.91C116.62,12.77,114.36,9.86,111.1,9.86ZM108.68,28c-1.34,0-1.92-.91-1.92-2.46V15.45c0-1.55.84-2.66,2-2.66,1.57,0,2.12,2.43,2.12,8.27C110.9,25.73,110.61,28,108.68,28Z"></path>
+                        <path d="M127.61,9.86a5.15,5.15,0,0,0-4.33,2.47V0H122l-5.5,2.62V3.4l1.39,1.37V27a10.45,10.45,0,0,0,7.51,2.69c4.86,0,7.71-4.12,7.71-10.91C133.14,12.77,130.88,9.86,127.61,9.86ZM125.2,28c-1.34,0-1.92-.91-1.92-2.46V15.45c0-1.55.84-2.66,2-2.66,1.58,0,2.13,2.43,2.13,8.27C127.42,25.73,127.13,28,125.2,28Z"></path>
+                        <path d="M140.45,26.15V0H139.2l-5.5,2.62V3.4l1.39,1.37V26.15c0,1.23-.08,1.75-1.37,1.83v1.31h8.1V28C140.53,27.9,140.45,27.38,140.45,26.15Z"></path>
+                        <path d="M146.61,7.2a2.95,2.95,0,1,0,0-5.89,3,3,0,0,0-3,3A3,3,0,0,0,146.61,7.2Z"></path>
+                        <path d="M149.24,26.15V9.86H148l-5.51,2.24v.78l1.39,1.36V26.15c0,1.23-.08,1.75-1.37,1.83v1.31h8.1V28C149.32,27.9,149.24,27.38,149.24,26.15Z"></path>
+                        <path d="M159.25,14.78A2.11,2.11,0,0,0,161.52,17a2.66,2.66,0,0,0,2.62-2.88c0-2.59-2.16-4.3-5.23-4.3-4.45,0-8.12,3.45-8.12,10.57,0,5.56,3,9.34,7.37,9.34,3.18,0,4.7-2.15,5.74-4.81L162.1,24c-.81,1.91-1.51,3-2.95,3-2.24,0-3.15-2.95-3.15-9.11,0-5.17,1.23-6.37,3-6.37.88,0,1.52.32,1.52.82S159.25,13.18,159.25,14.78Z"></path>
+                        <path d="M179.24,27.14c-.55,0-.83-.48-.83-1.59V16c0-4.1-2.42-6.16-7.11-6.16-3.66,0-6.13,1.86-6.13,4.42A2.64,2.64,0,0,0,167.84,17a2.13,2.13,0,0,0,2.34-2.22c0-1.57-1.4-2-1.4-2.48s.7-.82,1.59-.82c1.88,0,2.63.9,2.63,3.15v2.7l-3.22,1.47c-3.6,1.63-5.12,3.19-5.12,6.17a4.39,4.39,0,0,0,4.69,4.68,4.74,4.74,0,0,0,4-2.46,3.08,3.08,0,0,0,3.22,2.46A4.41,4.41,0,0,0,180,28.22V26.9A1.41,1.41,0,0,1,179.24,27.14ZM173,24.75c0,1.2-.67,2.15-1.7,2.15s-1.59-.89-1.59-2.81c0-2.24.63-3.22,1.87-4.11L173,19Z"></path>
+                     </svg>
+                  </a>
+               </h1>
+               <div class="hp-data">24 Maggio 2022 - Aggiornato alle 14.20</div>
+            </div>
+         </div>
+         <div class="header-bottom">
+            <nav class="main-navigation">
+               <ul class="main-navigation-menu">
+                  <li><a href="#">Politica</a></li>
+                  <li><a href="#">Economia</a></li>
+                  <li><a href="#">Mondo</a></li>
+                  <li><a href="#">Italia</a></li>
+                  <li><a href="#">Edizioni Locali</a></li>
+                  <li><a href="#">Sport</a></li>
+                  <li><a href="#">Spettacoli</a></li>
+                  <li><a href="#">Cultura</a></li>
+                  <li><a href="#">Il Venerd&igrave;</a></li>
+                  <li><a href="#">D</a></li>
+                  <li><a href="#">RepTv</a></li>
+               </ul>
+            </nav>
+         </div>
+      </header>
+      <div class="news-section">
+         <div class="news-content">
+            <nav class="trend-topics">
+               <ul class="trend-topics-list">
+                  <li>
+                     <a href="#">Strage di Capaci</a>
+                  </li>
+                  <li>
+                     <a href="#">730 precompilato</a>
+                  </li>
+                  <li>
+                     <a href="#">Ucraina-Russia</a>
+                  </li>
+                  <li>
+                     <a href="#">Cannes</a>
+                  </li>
+                  <li>
+                     <a href="#">Podcast</a>
+                  </li>
+                  <li>
+                     <a href="#">Salute </a>
+                  </li>
+                  <li>
+                     <a href="#">Green&amp;Blue</a>
+                  </li>
+                  <li>
+                     <a href="#">Moda&amp;Beauty</a>
+                  </li>
+                  <li>
+                     <a href="#">Il Gusto</a>
+                  </li>
+                  <li>
+                     <a href="#">Italian Tech</a>
+                  </li>
+               </ul>
+            </nav>
+         </div>
+      </div>
+      <main>
+         <div class="news-section">
+         <div class="news-content">
+         <section class="block block-layout-adv news-type2">
+            <h1 class="block-title">Primo piano</h1>
+            <div class="block-grid">
+               <div class="block-item">
+                  <article class="articolo ">
+                     <figure class="media-figure">
+                        <a href="#">
+                           <picture>
+                              <img src="https://via.placeholder.com/798x449">
+                           </picture>
+                        </a>
+                        <figcaption>
+                           ibendum vehicula risus tempor eget. Phasellus tempor sem a massa auctor mattis.
+                        </figcaption>
+                     </figure>
+                     <div class="entry__content">
+                        <h2 class="news-title">
+                           <a href="ucraina_russia_news_oggi_guerra-350951321.html">
+                           Mauris eget diam eget mauris tempus gravida. Nulla vestibulum condimentum molestie. Vestibulum faucibus ac ex at vehicula. Sed nec purus sed
+                           </a>
+                        </h2>
+                     </div>
+                  </article>
+               </div>
+               <div class="block-item">
+                  <article class="articolo ">
+                     <figure class="media-figure">
+                        <a href="#">
+                           <picture>
+                              <img height="217" src="https://via.placeholder.com/387x217" width="387">
+                        </a>
+                        </picture>
+                        </a>
+                     </figure>
+                     <div class="entry__content">
+                        <h2 class="news-title">
+                           <a href="#">
+                           obortis tincidunt. Quisque tristique maximus mi, nec venenatis ipsum euismod inCras erat turpis
+                           </a>
+                        </h2>
+                     </div>
+                  </article>
+               </div>
+            </div>
+         </section>
+         <section class="block block-layout news-type2">
+            <div class="block-grid">
+               <div class="block-item">
+                  <article class="articolo">
+                     <figure class="media-figure">
+                        <a href="#">
+                           <picture>
+                              <img src="https://via.placeholder.com/798x449">
+                           </picture>
+                        </a>
+                        <figcaption>
+                           nunc in sapien vestibulum, id vulputate
+                        </figcaption>
+                     </figure>
+                     <div class="entry__content">
+                        <h2 class="news-title">
+                           <a href="#">
+                           s tempor eget. Phasellus tempor sem a massa auctor mattis. Nam in interdum diam, quis sagitt
+                           </a>
+                        </h2>
+                     </div>
+                  </article>
+               </div>
+               <div class="block-item">
+                  <article class="articolo ">
+                     <figure class="media-figure">
+                        <a href="#">
+                           <picture>
+                              <img src="https://via.placeholder.com/798x449">
+                           </picture>
+                        </a>
+                     </figure>
+                     <div class="entry__content">
+                        <h2 class="news-title">
+                           <a href="#">
+                           dipiscing elit. Donec congue, erat congue semper congue, turpis mi nec dictum urna risus sit amet leo. Vivamus fringilla libero orci olestie condimentum mauris, nec ullamcorper turpis varius et.
+                           </a>
+                        </h2>
+                     </div>
+                  </article>
+                  <article class="articolo " data-sindex="3" data-tb-region-item="">
+                     <div class="entry__content">
+                        <h2 class="news-title">
+                           <a href="#">
+                           turpis mi nec dictum urna risus sit amet leo. Vivamus fringilla libero orci olestie condimentum mauris, nec ullamcorper turpis varius et.
+                           </a>
+                        </h2>
+                     </div>
+                  </article>
+                  <article class="articolo ">
+                     <div class="entry__content">
+                        <h2 class="news-title">
+                           <a href="#">
+                           Vivamus fringilla libero orci olestie condimentum mauris, nec ullamcorper turpis varius et.
+                           </a>
+                        </h2>
+                     </div>
+                  </article>
+               </div>
+               <div class="block-item">
+                  <article class="articolo">
+                     <figure class="media-figure">
+                        <a href="#">
+                           <picture>
+                              <img src="https://via.placeholder.com/387x217">
+                           </picture>
+                        </a>
+                     </figure>
+                     <div class="entry__content">
+                        <h2 class="news-title">
+                           <a href="sondaggi_politici_elezioni_amministrative-350996975.html">
+                           Vivamus fringilla libero orci olestie condimentum mauris, nec ullamcorper turpis varius et.
+                           </a>
+                        </h2>
+                     </div>
+                  </article>
+               </div>
+               <div class="block-item">
+                  <article class="articolo">
+                     <figure class="media-figure">
+                        <a href="#">
+                           <picture>
+                              <img src="https://via.placeholder.com/387x217">
+                           </picture>
+                        </a>
+                     </figure>
+                     <div class="entry__content">
+                        <h2 class="news-title">
+                           <a href="https://roma.repubblica.it/cronaca/2022/05/24/news/roma_prof_sapienza_ruba_la_laurea-350937502/">
+                           Vivamus fringilla libero orci olestie condimentum mauris, nec ullamcorper turpis varius et.
+                           </a>
+                        </h2>
+                     </div>
+                  </article>
+               </div>
+               <div class="block-item">
+                  <article class="articolo">
+                     <figure class="media-figure">
+                        <a href="#">
+                           <picture>
+                              <img src="https://via.placeholder.com/387x217">
+                           </picture>
+                        </a>
+                     </figure>
+                     <div class="entry__content">
+                        <h2 class="news-title">
+                           <a href="uber_taxi_accordo_in_italia-351001458.html">
+                           Vivamus fringilla libero orci olestie condimentum mauris, nec ullamcorper turpis varius et.
+                           </a>
+                        </h2>
+                     </div>
+                  </article>
+               </div>
+               <div class="block-item">
+                  <article class="articolo">
+                     <figure class="media-figure">
+                        <a href="#">
+                           <picture>
+                              <img src="https://via.placeholder.com/387x217">
+                           </picture>
+                        </a>
+                     </figure>
+                     <div class="entry__content">
+                        <h2 class="news-title">
+                        <a href="#">
+                        Vivamus fringilla libero orci olestie condimentum mauris, nec ullamcorper turpis varius et.
+                        </a>
+                     </div>
+                  </article>
+               </div>
+               <div class="block-item">
+                  <article class="articolo">
+                     <figure class="media-figure">
+                        <a href="#">
+                           <picture>
+                              <img src="https://via.placeholder.com/387x217">
+                           </picture>
+                        </a>
+                     </figure>
+                     <div class="entry__content">
+                        <h2 class="news-title">
+                           <a href="#l">
+                           Vivamus fringilla libero orci olestie condimentum mauris, nec ullamcorper turpis varius et.
+                           </a>
+                        </h2>
+                     </div>
+                  </article>
+               </div>
+            </div>
+         </section>
+         <section class="block block__layout-B-12 news-type2">
+            <h1 class="block-title">
+               Le storie
+            </h1>
+            <div class="block-grid">
+               <div class="block-item">
+                  <article class="articolo">
+                     <figure class="media-figure">
+                        <a href="#">
+                           <picture>
+                              <img src="https://via.placeholder.com/593x333">
+                           </picture>
+                        </a>
+                     </figure>
+                     <div class="entry__content">
+                        <h2 class="news-title">
+                           <a href="#">
+                           Cras non felis ipsum. Nunc augue enim, aliquam at pulvinar ac, gravida eget mauris.
+                           </a>
+                        </h2>
+                     </div>
+                  </article>
+               </div>
+               <div class="block-item">
+                  <article class="articolo">
+                     <figure class="media-figure">
+                        <a href="#">
+                           <picture>
+                              <img src="https://via.placeholder.com/593x333">
+                           </picture>
+                        </a>
+                     </figure>
+                     <div class="entry__content">
+                        <h2 class="news-title">
+                           <a href="#">
+                           Cras non felis ipsum. Nunc augue enim, aliquam at pulvinar ac, gravida eget mauris.
+                           </a>
+                        </h2>
+                     </div>
+                  </article>
+               </div>
+               <div class="block-item">
+                  <article class="articolo">
+                     <figure class="media-figure">
+                        <a href="#">
+                           <picture>
+                              <img src="https://via.placeholder.com/593x333">
+                           </picture>
+                        </a>
+                     </figure>
+                     <div class="entry__content">
+                        <h2 class="news-title">
+                           <a href="#">
+                           Cras non felis ipsum. Nunc augue enim, aliquam at pulvinar ac, gravida eget mauris.
+                           </a>
+                        </h2>
+                     </div>
+                  </article>
+               </div>
+               <div class="block-item">
+                  <article class="articolo">
+                     <figure class="media-figure">
+                        <a href="#">
+                           <picture>
+                              <img src="https://via.placeholder.com/593x333">
+                           </picture>
+                        </a>
+                     </figure>
+                     <div class="entry__content">
+                        <h2 class="news-title">
+                           <a href="#">
+                           Cras non felis ipsum. Nunc augue enim, aliquam at pulvinar ac, gravida eget mauris.
+                           </a>
+                        </h2>
+                     </div>
+                  </article>
+               </div>
+            </div>
+         </section>
+         <section class="block block__layout-F-12 is-cover">
+            <h1 class="block-title">
+               Sport
+            </h1>
+            <div class="block-grid">
+               <div class="block-item">
+                  <article class="articolo">
+                     <figure class="media-figure">
+                        <a href="#">
+                           <picture>
+                              <img src="https://via.placeholder.com/593x333">
+                           </picture>
+                        </a>
+                     </figure>
+                     <div class="entry__content">
+                        <h2 class="news-title">
+                           <a href="#">
+                           Mauris ultricies enim auctor sodales malesuada. Fusce finibus augue elit , ac eleifend orci sodales sit amet. Cras tortor leo, blandit congue nisl in
+                           </a>
+                        </h2>
+                     </div>
+                  </article>
+               </div>
+               <div class="block-item">
+                  <article class="articolo">
+                     <figure class="media-figure">
+                        <a href="#">
+                           <picture>
+                              <img src="https://via.placeholder.com/593x333">
+                           </picture>
+                        </a>
+                     </figure>
+                     <div class="entry__content">
+                        <h2 class="news-title">
+                           <a href="#">
+                           Mauris ultricies enim auctor sodales malesuada. Fusce finibus augue elit , ac eleifend orci sodales sit amet. Cras tortor leo, blandit congue nisl in
+                           </a>
+                        </h2>
+                     </div>
+                  </article>
+               </div>
+               <div class="block-item">
+                  <article class="articolo">
+                     <div class="entry__content">
+                        <h2 class="news-title">
+                           <a href="#">
+                           Mauris ultricies enim auctor sodales malesuada. Fusce finibus augue elit , ac eleifend orci sodales sit amet.
+                           </a>
+                        </h2>
+                     </div>
+                  </article>
+                  <article class="articolo">
+                     <div class="entry__content">
+                        <h2 class="news-title">
+                           <a fck_savedurl="" href="#">
+                           Mauris ultricies enim auctor sodales malesuada. Fusce finibus augue elit , ac eleifend orci sodales sit amet.
+                           </a>
+                        </h2>
+                     </div>
+                  </article>
+                  <article class="articolo">
+                     <div class="entry__content">
+                        <h2 class="news-title">
+                           <a href="#">
+                           Mauris ultricies enim auctor sodales malesuada. Fusce finibus augue elit , ac eleifend orci sodales sit amet.
+                           </a>
+                        </h2>
+                     </div>
+                  </article>
+               </div>
+            </div>
+         </section>
+         <section class="block block__layout-B-12 news-type1">
+            <h1 class="block-title">
+               RepTv
+            </h1>
+            <div class="block-grid">
+               <div class="block-item">
+                  <article class="articolo">
+                     <figure class="media-figure">
+                        <a href="#">
+                           <picture>
+                              <img src="https://via.placeholder.com/593x333">
+                           </picture>
+                        </a>
+                     </figure>
+                     <div class="entry__content">
+                        <h2 class="news-title">
+                           <a href="#">
+                           Donec tincidunt at nisi ac volutpat. Nam ornare enim nec vehicula sollicitudin. Nullam ac felis at lectus aliquam sollicitudin.
+                           </a>
+                        </h2>
+                     </div>
+                  </article>
+               </div>
+               <div class="block-item">
+                  <article class="articolo">
+                     <figure class="media-figure">
+                        <a href="#">
+                           <picture>
+                              <img src="https://via.placeholder.com/593x333">
+                           </picture>
+                        </a>
+                     </figure>
+                     <div class="entry__content">
+                        <h2 class="news-title">
+                           <a href="#">
+                           Donec tincidunt at nisi ac volutpat. Nam ornare enim nec vehicula sollicitudin. Nullam ac felis at lectus aliquam sollicitudin.
+                           </a>
+                        </h2>
+                     </div>
+                  </article>
+               </div>
+               <div class="block-item">
+                  <article class="articolo">
+                     <figure class="media-figure">
+                        <a href="#">
+                           <picture>
+                              <img src="https://via.placeholder.com/593x333">
+                           </picture>
+                        </a>
+                     </figure>
+                     <div class="entry__content">
+                        <h2 class="news-title">
+                           <a href="#">
+                           Donec tincidunt at nisi ac volutpat. Nam ornare enim nec vehicula sollicitudin. Nullam ac felis at lectus aliquam sollicitudin.
+                           </a>
+                        </h2>
+                     </div>
+                  </article>
+               </div>
+               <div class="block-item">
+                  <article class="articolo">
+                     <figure class="media-figure">
+                        <a href="#">
+                           <picture>
+                              <img src="https://via.placeholder.com/593x333">
+                           </picture>
+                        </a>
+                     </figure>
+                     <div class="entry__content">
+                        <h2 class="news-title">
+                           <a href="#">
+                           Donec tincidunt at nisi ac volutpat. Nam ornare enim nec vehicula sollicitudin. Nullam ac felis at lectus aliquam sollicitudin.
+                           </a>
+                        </h2>
+                     </div>
+                  </article>
+               </div>
+               <div class="block-item">
+                  <article class="articolo">
+                     <figure class="media-figure">
+                        <a href="#">
+                           <picture>
+                              <img src="https://via.placeholder.com/593x333">
+                           </picture>
+                        </a>
+                     </figure>
+                     <div class="entry__content">
+                        <h2 class="news-title">
+                           <a href="#">
+                           Donec tincidunt at nisi ac volutpat. Nam ornare enim nec vehicula sollicitudin. Nullam ac felis at lectus aliquam sollicitudin.
+                           </a>
+                        </h2>
+                     </div>
+                  </article>
+               </div>
+            </div>
+         </section>
+      </main>
+      <footer>
+         <div class="footer-upper">
+            <div class="footer-content">
+               <ul>
+                  <li><a href="#">Fai di Repubblica la tua homepage</a></li>
+                  <li><a href="#">Mappa del sito</a></li>
+                  <li><a href="#">Redazione</a></li>
+                  <li><a href="#">Scriveteci</a></li>
+                  <li><a href="#">Per inviare foto e video</a></li>
+                  <li><a href="#">Servizio Clienti</a></li>
+                  <li><a href="#">Pubblicit&agrave;</a></li>
+                  <li><a href="#" >Cookie Policy</a></li>
+                  <li><a href="#">Privacy</a></li>
+                  <li><a href="#">Codice Etico e Best Practices</a></li>
+               </ul>
+            </div>
+         </div>
+         <div class="footer-bottom">
+            <div class="footer-content">
+               <a href="#">GEDI News Network S.p.A.</a> - P.Iva 01578251009 - ISSN 2499-0817
+            </div>
+         </div>
+      </footer>
+      <script>
+         var search = 0;
+         var leftBar = 0;
+         function openSearch() {
+           if (search == 0 ){
+             var element = document.getElementById("sticky-searchForm");
+             element.classList.add("is-open");
+             search = 1;
+           } else{
+             var element = document.getElementById("sticky-searchForm");
+             element.classList.remove("is-open");
+             search = 0;
+           }
+         }
+
+         function openLeftBar(){
+           if (leftBar == 0 ){
+             document.documentElement.classList.add('is-left-menu-open');
+             leftBar = 1;
+           } else{
+             document.documentElement.classList.remove('is-left-menu-open');
+             leftBar = 0;
+           }
+         }
+      </script>
+   </body>
+</html>
